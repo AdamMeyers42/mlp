@@ -26,17 +26,8 @@ class App extends Component {
     console.log(this.state.songs)
     return (
       <div>
-      <table>
-          <tr>
-              <th>Title</th>
-              <th>Artist</th>
-              <th>Album</th>
-              <th>Release Date</th>
-              <th>Genre</th>
-          </tr>
-          {/* <MusicTable songs={this.state.songs} getAllSongs={this.getAllSongs}/> */}
-      </table>
-  </div>
+      <MusicTable songs={this.state.songs}/>
+      </div>
       );
   }
 }

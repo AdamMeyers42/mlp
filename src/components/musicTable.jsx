@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import deleteSong from './deleteSong'
 
 
 class MusicTable extends Component {
@@ -11,16 +12,31 @@ class MusicTable extends Component {
     
     render() { 
         return (
-            for (i=0; i < this.props.songs.length; i++){
-                 <tr>
-                    <th>{this.props.songs[0].title}</th>
-                    <th>{this.props.songs[0].artist}</th>
-                    <th>{this.props.songs[0].album}</th>
-                    <th>{this.props.songs[0].release_date}</th>
-                    <th>{this.props.songs[0].genre}</th>
+            <table>
+                <tr>
+                    <th>Title</th>    
+                    <th>Artist</th>
+                    <th>Album</th>
+                    <th>Release Date</th>
+                    <th>Genre</th>
+                    <th>Action</th>
                 </tr>
-          )};
+                {this.props.songs.map(function(song){
+                    return(
+                        <tr>
+                            <td>{song.title}</td>
+                            <td>{song.artist}</td>
+                            <td>{song.album}</td>
+                            <td>{song.release_date}</td>
+                            <td>{song.genre}</td>
+                            <td><button>Edit</button><button onClick={deleteSong(song.Id)}>Delete</button></td>
+                        </tr>
+                    )
+                    })}
+            </table>
+          );
     }
 }
  
+    
 export default MusicTable;
