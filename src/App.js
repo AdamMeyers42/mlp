@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MusicTable from './components/musicTable';
-
+import Form from './Form';
 
 class App extends Component {
   constructor(props) {
@@ -27,6 +27,10 @@ class App extends Component {
     return (
       <div>
       <MusicTable songs={this.state.songs}/>
+      <br/>
+      <br/>
+      <br/>
+      <Form />
       </div>
       );
   }
